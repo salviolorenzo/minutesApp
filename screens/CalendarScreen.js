@@ -1,18 +1,20 @@
-import React from 'react';
-import { ScrollView, StyleSheet, Text } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendar';
 
 export default function CalendarScreen() {
-  return (
-    <ScrollView style={styles.container}>
-      <Text>Calendar</Text>
-    </ScrollView>
-  );
+  const [selected, onDayPress] = useState('');
+
+  return <View style={styles.container} />;
 }
 
 CalendarScreen.navigationOptions = {
   title: 'Calendar'
 };
+
+function handleDayPress(onDayPress, day) {
+  onDayPress(day);
+}
 
 const styles = StyleSheet.create({
   container: {
